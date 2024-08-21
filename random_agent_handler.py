@@ -8,9 +8,10 @@ class RandomAgentHandler(BaseHandler):
 
     def preprocess(self, requests):
         data = requests[0].get("body")
-        if isinstance(data, (bytes, bytearray)):
-            data = data.decode('utf-8')
-        return json.loads(data)
+        return data
+        # if isinstance(data, (bytes, bytearray)):
+        #     data = data.decode('utf-8')
+        # return json.loads(data)
 
 
     def inference(self, data):
